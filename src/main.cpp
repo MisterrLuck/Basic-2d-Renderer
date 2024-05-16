@@ -37,7 +37,7 @@ int main(void) {
     state currState = state::Normal;
 
     sf::Font font;
-    if (!font.loadFromFile("C:\\Users\\joshu\\OneDrive\\Documents\\C++\\Geometry Project\\src\\Roboto-Regular.ttf")) {
+    if (!font.loadFromFile("..\\..\\src\\Roboto-Regular.ttf")) {
         cout << "Error loading font file \"Roboto-Regular.ttf\"\n";
     }
 
@@ -258,13 +258,3 @@ int main(void) {
         window.display();
     }
 }
-
-// P -> draw point - right click to stop drawing points
-// L -> draw line
-// S -> draw shape - right click to stop and create the shape
-// D -> delete item of the stack, press P, L, or S to delete Point, Line, or Shape respectively
-// C -> clear all shapes, lines, points, etc.
-
-// R -> Reflect   - type index of shape to reflect   - type index of reflection line
-// O -> Rotate    - type index of shape to rotate    - type index of rotation point  - type angle in three digits (clockwise)
-// T -> Translate - type index of shape to translate - type x offset in 4 digits (the first is negativ or positive) - type y ...
