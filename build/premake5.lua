@@ -1,9 +1,9 @@
 -- premake5.lua
-workspace "GeomProject"
+workspace "Renderer"
    configurations { "Debug", "Release" }
 
-project "GeomProject"
-   kind "ConsoleApp"
+project "Renderer"
+   kind "WindowedApp"
    language "C++"
    targetdir "../bin/%{cfg.buildcfg}"
    objdir "../obj"
