@@ -61,20 +61,23 @@ int main(void) {
                         case sf::Keyboard::Key::S:
                             if (currState == state::Delete) {
                                 if (shapes.size() != 0) shapes.pop_back();
+                                currState = state::Normal;
                             }
                             else if (currState == state::Normal) currState = state::DrawShape;
                             break;
                         case sf::Keyboard::Key::L:
                             if (currState == state::Delete) {
                                 if (lines.size() != 0) lines.pop_back();
+                                currState = state::Normal;
                             }
                             else if (currState == state::Normal) currState = state::DrawLine;
                             break;
                         case sf::Keyboard::Key::P:
                             if (currState == state::Delete) {
                                 if (points.size() != 0) points.pop_back();
+                                currState = state::Normal;
                             }
-                            else if (currState == state::Normal) currState = state::DrawLine;
+                            else if (currState == state::Normal) currState = state::DrawPoint;
                             break;
                         case sf::Keyboard::Key::D:
                             if (currState == state::Normal) currState = state::Delete;
@@ -245,6 +248,9 @@ int main(void) {
             case state::DrawPoint:
                 str.append("Point");
                 break;
+            case state::Delete:
+                str.append("Delete");
+                break;
         }
 
         for (auto i : inputInts) {
@@ -258,3 +264,13 @@ int main(void) {
         window.display();
     }
 }
+
+// P -> draw point - right click to stop drawing points
+// L -> draw line
+// S -> draw shape - right click to stop and create the shape
+// D -> delete item of the stack, press P, L, or S to delete Point, Line, or Shape respectively
+// C -> clear all shapes, lines, points, etc.
+
+// R -> Reflect   - type index of shape to reflect   - type index of reflection line
+// O -> Rotate    - type index of shape to rotate    - type index of rotation point  - type angle in three digits (clockwise)
+// T -> Translate - type index of shape to translate - type x offset in 4 digits (the first is negativ or positive) - type y ...
