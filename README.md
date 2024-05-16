@@ -10,14 +10,20 @@ To build the project you have to have Premake and Make installed
 
 Go into the `/build/` directory and run
 
-```premake```
+```
+premake
+```
 
 This will build the Makefile
 
 To build the release version, run
 
-```make config=release```
+```
+make config=release
+```
 
 Then go into the `/bin/Release/` directory and run
 
-```.\Renderer.exe```
+```
+.\Renderer.exe
+```
